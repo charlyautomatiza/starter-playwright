@@ -13,12 +13,12 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '16.x'
-    - name: Setup Framework
-      run: npm i
-    - name: Playwright install
-      run: npx playwright install-deps
+    - name: Install dependencies
+      run: npm ci
+    - name: Install Playwright
+      run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npm run test
+      run: npx playwright test
     - uses: actions/upload-artifact@v2
       if: always()
       with:
