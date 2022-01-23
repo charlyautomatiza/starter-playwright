@@ -47,5 +47,5 @@ Podrás acceder mi canal de [YouTube](https://www.youtube.com/channel/UCwEb6xrQt
 
 **Para crear y abrir el reporte de Allure unificado de los resultados de los test**
 
-    npm run allure-report
+    npm run open-report
 

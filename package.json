@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rimraf allure-results && rimraf allure-report && rimraf test-results && rimraf playwright-report && rimraf junit-results",
     "play-report": "npx playwright show-report",
-    "allure-report": "allure generate ./allure-results --clean && allure open ./allure-report",
+    "allure-report": "allure generate ./allure-results --clean",
+    "open-report": "npm run allure-report && allure open ./allure-report",
     "firefox": "npm run clean && npx playwright test --project=firefox",
     "chromiun": "npx playwright test --project=chromiun",
     "webkit": "npx playwright test --project=webkit",
