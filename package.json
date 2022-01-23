@@ -1,0 +1,35 @@
+{
+  "name": "starter-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-results && rimraf playwright-report && rimraf junit-results",
+    "play-report": "npx playwright show-report",
+    "allure-report": "allure generate ./allure-results --clean && allure open ./allure-report",
+    "firefox": "npm run clean && npx playwright test --project=firefox",
+    "chromiun": "npx playwright test --project=chromiun",
+    "webkit": "npx playwright test --project=webkit",
+    "test": "npm run clean && npx playwright test",
+    "test-head": "npm run clean && npx playwright test --headed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/charlyautomatiza/starter-playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charlyautomatiza/starter-playwright/issues"
+  },
+  "homepage": "https://github.com/charlyautomatiza/starter-playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.18.0",
+    "allure-commandline": "^2.17.2",
+    "allure-playwright": "^2.0.0-beta.14"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2"
+  }
+}
