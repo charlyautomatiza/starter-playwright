@@ -9,43 +9,50 @@ Podrás acceder mi canal de [YouTube](https://www.youtube.com/channel/UCwEb6xrQt
 - Instalar [Node.js](https://nodejs.org/es/download/)
 - Instalar algún cliente git como por ejemplo [git bash](https://git-scm.com/downloads) 
 - Java Development Kit [(JDK)](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133155.html)
-    - Asegurarse de tener configurada la variable de entorno **JAVA_HOME** con la ruta de la JDK respectiva **(Necesario para la generación del reporte de Allure)**.
+  - Asegurarse de tener configurada la variable de entorno **JAVA_HOME** con la ruta de la JDK respectiva **(Necesario para la generación del reporte de Allure)**.
 
 ### Instalación del framework de pruebas
 
-**Clonar el repositorio:**
+#### **Clonar el repositorio:**
 
     git clone https://github.com/charlyautomatiza/starter-playwright.git
 
-**Instalar las dependencias.**
+#### **Instalar las dependencias.**
 
     npm install
 
-**Para la ejecución de todos test en todos los browsers en modo headless**
+#### **Para la ejecución de todos test en todos los browsers en modo headless**
 
     npm run test
 
-**Para la ejecución de todos test en todos los browsers**
+#### **Para la ejecución de todos test en todos los browsers**
 
     npm run test-head
 
-**Para la ejecución solamente en Firefox**
+#### **Para la ejecución solamente en Firefox**
 
     npm run firefox
 
-**Para la ejecución solamente en Chromium**
+#### **Para la ejecución solamente en Chromium**
 
     npm run chromium
 
-**Para la ejecución solamente en Webkit**
+#### **Para la ejecución solamente en Webkit**
 
     npm run webkit
 
-**Para abrir el reporte Html de Playwright unificado de los resultados de los test**
+#### **Para abrir el reporte Html de Playwright unificado de los resultados de los test**
 
     npm run play-report
 
-**Para crear y abrir el reporte de Allure unificado de los resultados de los test**
+#### **Para crear y abrir el reporte de Allure unificado de los resultados de los test**
 
     npm run open-report
 
+#### **IMPORTANTE**
+
+Luego de cada upgrade de Playwright, se debe reiniciar el proyecto localmente con el comando:
+
+    npm run reinstall
+
+Para descargar las últimas versiones de los Browsers.
