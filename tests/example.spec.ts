@@ -4,7 +4,6 @@ import { PlaywrightDevPage } from './pageobjects/playwright-dev-page';
 test('basic test without POM', async ({ page }) => {
   await page.goto('https://playwright.dev/');
   await page.locator('text=Get started').click();
-  await expect(page).toHaveTitle(/Getting started/);
 });
 
 test('Get Started table of contents', async ({ page }) => {
@@ -12,6 +11,8 @@ test('Get Started table of contents', async ({ page }) => {
   await playwrightDev.goto();
   await playwrightDev.getStarted();
   await expect(playwrightDev.tocList).toHaveText([
+    '🏠',
+    'Getting started',
     'Installation',
     'First test',
     'Configuration file',
