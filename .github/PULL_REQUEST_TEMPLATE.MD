@@ -11,14 +11,14 @@ Closes: #(issue)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected).
 - [ ] This change requires a documentation update.
 
-# How Has This Been Tested?
+## How Has This Been Tested?
 
 Please describe the tests that you ran to verify your changes. Provide instructions so we can reproduce. Please also list any relevant details for your test configuration and a screenshot of your full execution.
 
 - [ ] Test A
 - [ ] Test B
 
-# Checklist:
+## Checklist
 
 - [ ] Title of PR is according to convention.
 - [ ] My code follows the style guidelines of this project (**prettyfy**).
