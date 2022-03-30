@@ -13,7 +13,8 @@
     "webkit": "npx playwright test --project=webkit",
     "test": "npm run clean && npx playwright test",
     "test-head": "npm run clean && npx playwright test --headed",
-    "reinstall": "npx playwright install"
+    "reinstall": "npx playwright install",
+    "install-deps": "npx playwright install-deps"
   },
   "repository": {
     "type": "git",
