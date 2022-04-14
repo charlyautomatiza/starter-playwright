@@ -19,6 +19,7 @@ test('Get Started table of contents', async ({ page }) => {
     'Writing assertions',
     'Using test fixtures',
     'Using test hooks',
+    'VS Code extension',
     'Command line',
     'Configure NPM scripts',
     'Release notes',
