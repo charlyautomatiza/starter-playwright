@@ -33,7 +33,7 @@ const config: PlaywrightTestConfig = {
   reporter: [
     ['dot'],
     ['line'],
-    ['html'],
+    ['html', { open: 'never' }],
     ['allure-playwright'],
     ['junit', { outputFile: './junit-results/results.xml' }] 
   ],
