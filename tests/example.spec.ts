@@ -6,22 +6,9 @@ test('basic test without POM', async ({ page }) => {
   await page.locator('text=Get started').click();
 });
 
-test('Get Started table of contents', async ({ page }) => {
+test('Get Started doc intro', async ({ page }) => {
   const playwrightDev = new PlaywrightDevPage(page);
   await playwrightDev.goto();
   await playwrightDev.getStarted();
-  await expect(playwrightDev.tocList).toHaveText([
-    '🏠',
-    'Getting started',
-    'Installation',
-    'First test',
-    'Configuration file',
-    'Writing assertions',
-    'Using test fixtures',
-    'Using test hooks',
-    'VS Code extension',
-    'Command line',
-    'Configure NPM scripts',
-    'Release notes',
-  ]);
+  await expect(playwrightDev.tocList).toContainText('Getting started');
 });

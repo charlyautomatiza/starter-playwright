@@ -10,7 +10,7 @@ export class PlaywrightDevPage {
     this.page = page;
     this.getStartedLink = page.locator('text=Get started');
     this.gettingStaterdTitle = page.locator('text=Getting started');
-    this.tocList = page.locator('article ul > li > a');
+    this.tocList = page.locator('div[class="theme-doc-markdown markdown"] header h1');
   }
 
   async goto() {
