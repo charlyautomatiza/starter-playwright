@@ -1,0 +1,31 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm ci
+    npx playwright install --with-deps
+    npx playwright test
+  displayName: 'Install and Test'
+
+# Publish Test Results
+- task: PublishTestResults@2
+  condition: always()
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'junit-results/*.xml' 
+    searchFolder: '$(System.DefaultWorkingDirectory)' # Optional
+    #mergeTestResults: false # Optional
+    #failTaskOnFailedTests: false # Optional
+    #testRunTitle: # Optional
+    #buildPlatform: # Optional
+    #buildConfiguration: # Optional
+    #publishRunAttachments: true # Optional
