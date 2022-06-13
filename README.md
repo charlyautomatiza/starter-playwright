@@ -9,9 +9,9 @@
 
 # Web Test Automation - Playwright
 
-## Boilerplate project creado en vivo en [stream de Twitch](https://www.twitch.tv/charlyautomatiza) basado en [Playwright](https://playwright.dev/), [TypeScript](https://www.typescriptlang.org/), [Allure Report](https://docs.qameta.io/allure-report/)
+## Boilerplate project created live on [Twitch.tv/CharlyAutomatiza](https://www.twitch.tv/charlyautomatiza) based on [Playwright](https://playwright.dev/), [TypeScript](https://www.typescriptlang.org/), [Allure Report](https://docs.qameta.io/allure-report/)
 
-Podrás acceder a mi canal de [YouTube](https://www.youtube.com/c/CharlyAutomatiza?sub_confirmation=1) para mayor información sobre este y otros frameworks de pruebas automatizadas.
+You can access my [YouTube](https://www.youtube.com/c/CharlyAutomatiza?sub_confirmation=1) channel for more information about this and other automated testing frameworks.
 
 ### Overview
 
