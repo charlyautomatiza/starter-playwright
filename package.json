@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf allure-results && rimraf allure-report && rimraf test-results && rimraf playwright-report && rimraf junit-results",
     "api-example": "npx playwright test tests/api.example.spec.ts --project=chromium",
-    "api-ui": "npx playwright test tests/api.ui.spec.ts --project=chromium",
+    "api-ui": "npm run clean && npx playwright test tests/api.ui.spec.ts --project=chromium",
     "play-report": "npx playwright show-report",
     "allure-report": "allure generate ./allure-results --clean",
     "open-report": "npm run allure-report && allure open ./allure-report",
@@ -35,12 +35,12 @@
   },
   "homepage": "https://github.com/charlyautomatiza/starter-playwright#readme",
   "devDependencies": {
-    "@playwright/test": "^1.22.0",
+    "@playwright/test": "^1.22.2",
     "allure-commandline": "^2.17.2",
-    "allure-playwright": "^2.0.0-beta.16"
+    "allure-playwright": "^2.0.0-beta.17"
   },
   "dependencies": {
-    "@faker-js/faker": "^7.2.0",
+    "@faker-js/faker": "^7.3.0",
     "rimraf": "^3.0.2"
   }
 }
