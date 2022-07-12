@@ -9,70 +9,63 @@
 
 # Web Test Automation - Playwright
 
-## Boilerplate project created live on [Twitch.tv/CharlyAutomatiza](https://www.twitch.tv/charlyautomatiza) based on [Playwright](https://playwright.dev/), [TypeScript](https://www.typescriptlang.org/), [Allure Report](https://docs.qameta.io/allure-report/)
+## Boilerplate project creado en vivo en [stream de Twitch](https://www.twitch.tv/charlyautomatiza) basado en [Playwright](https://playwright.dev/), [TypeScript](https://www.typescriptlang.org/), [Allure Report](https://docs.qameta.io/allure-report/)
 
-You can access my [YouTube](https://www.youtube.com/c/CharlyAutomatiza?sub_confirmation=1) channel for more information about this and other automated testing frameworks.
+Podrás acceder a mi canal de [YouTube](https://www.youtube.com/c/CharlyAutomatiza?sub_confirmation=1) para mayor información sobre este y otros frameworks de pruebas automatizadas.
 
-### Overview
+### Requerimientos generales
 
-Esta documentación está disponible también en [**Castellano**](LEEME.md).
-
-### General requirements
-
-- Install a git client such as [git bash](https://git-scm.com/downloads)
-
-Download and install
-
-- Latest version of [Node.js](https://nodejs.org/es/download/)
+- Instalar [Node.js](https://nodejs.org/es/download/)
+- Instalar algún cliente git como por ejemplo [git bash](https://git-scm.com/downloads)
 - Java Development Kit [(JDK)](https://www.oracle.com/java/technologies/downloads/)
-  - Make sure you have the environment variable **JAVA_HOME** set to the path of the respective JDK. **(Required for Allure report generation)**.
+  - Asegurarse de tener configurada la variable de entorno **JAVA_HOME** con la ruta de la JDK respectiva. **(Necesario para la generación del reporte de Allure)**.
 
-### Installation of the testing framework
+### Instalación del framework de pruebas
 
-#### **Clone the repository:**
+#### **Clonar el repositorio:**
 
     git clone https://github.com/charlyautomatiza/starter-playwright.git
 
-#### **Install dependencies.**
+#### **Instalar las dependencias.**
 
     npm install
 
-#### **To run the tests go to the root of the project and run (headless mode)**
+#### **Para la ejecución de todos test en todos los browsers en modo headless**
 
     npm run test
 
-#### **To run the tests go to the root of the project and run (headed mode)**
+#### **Para la ejecución de todos test en todos los browsers**
 
     npm run test-head
 
-#### **To run the tests only on Firefox**
+#### **Para la ejecución solamente en Firefox**
 
     npm run firefox
 
-#### **To run the tests only on Chromium**
+#### **Para la ejecución solamente en Chromium**
 
     npm run chromium
 
-#### **To run the tests only on Webkit**
+#### **Para la ejecución solamente en Webkit**
 
     npm run webkit
 
-#### **To run the tests with UI + API Examples**
+#### **Para la ejecución de ejemplos UI + API**
 
     npm run api-ui
 
-#### **To open Playwright's unified Html report of test results**
+#### **Para abrir el reporte Html de Playwright unificado de los resultados de los test**
 
     npm run play-report
 
-#### **To create and open the Allure unified report of test results**
+#### **Para crear y abrir el reporte de Allure unificado de los resultados de los test**
 
     npm run open-report
 
-#### **IMPORTANT**
+#### **IMPORTANTE**
 
-After each upgrade of **Playwright**, the project must be restarted locally with the command:
+Luego de cada upgrade de Playwright, se debe reiniciar el proyecto localmente con el comando:
 
     npm run reinstall
 
-To download the latest versions of the Browsers.
+Para descargar las últimas versiones de los Browsers.
