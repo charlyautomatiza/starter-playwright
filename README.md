@@ -61,6 +61,26 @@ Download and install
 
     npm run api-ui
 
+#### **For running Accessibility Testing examples with [Lighthouse](https://www.npmjs.com/package/playwright-lighthouse)**
+
+    npm run a11y
+
+**IMPORTANT**:
+
+In the `thresholds` section of the [lighthouse.spec.ts](./tests/lighthouse.spec.ts) file, you can configure the acceptance level of the `accessibility`, `performance`, `SEO`, `best-practices`, `pwa` respectively.
+
+If our threshold is 100 for `accessibility`, our test must have 100% acceptance to be considered successful.
+
+    ```typescript
+        thresholds: {
+            performance: 50,
+            accessibility: 100,
+            'best-practices': 50,
+            seo: 50,
+            pwa: 0,
+        },
+    ```
+
 #### **To open Playwright's unified Html report of test results**
 
     npm run play-report

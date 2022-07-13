@@ -2,3 +2,4 @@ node_modules/
 *-results/
 playwright-report/
 allure*
+lighthouse/

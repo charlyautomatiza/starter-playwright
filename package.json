@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-results && rimraf playwright-report && rimraf junit-results",
+    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-results && rimraf playwright-report && rimraf junit-results && rimraf lighthouse",
     "api-example": "npx playwright test tests/api.example.spec.ts --project=chromium",
     "api-ui": "npm run clean && npx playwright test tests/api.ui.spec.ts --project=chromium",
     "play-report": "npx playwright show-report",
@@ -12,6 +12,7 @@
     "open-report": "npm run allure-report && allure open ./allure-report",
     "firefox": "npm run clean && npx playwright test --project=firefox",
     "chromiun": "npx playwright test --project=chromiun",
+    "a11y": "npm run clean && npx playwright test tests/lighthouse.spec.ts --project=chromium",
     "webkit": "npx playwright test --project=webkit",
     "test": "npm run clean && npx playwright test",
     "test-head": "npm run clean && npx playwright test --headed",
@@ -37,7 +38,11 @@
   "devDependencies": {
     "@playwright/test": "^1.22.2",
     "allure-commandline": "^2.17.2",
-    "allure-playwright": "^2.0.0-beta.17"
+    "allure-playwright": "^2.0.0-beta.17",
+    "lighthouse": "^9.6.1",
+    "playwright": "^1.22.2",
+    "playwright-lighthouse": "^2.2.2",
+    "typescript": "^4.7.2"
   },
   "dependencies": {
     "@faker-js/faker": "^7.3.0",
