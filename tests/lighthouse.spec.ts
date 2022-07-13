@@ -3,21 +3,21 @@ import { playAudit } from 'playwright-lighthouse';
 import { test } from '@playwright/test';
 import { chromium } from 'playwright';
 
-test('Accessibility test', async ({ page }) => {
+test('Accessibility test', async () => {
     const context = await chromium.launchPersistentContext(os.tmpdir(), {
         args: ['--remote-debugging-port=9222'],
     });
-    page = await context.newPage();
-    await page.goto('https://www.washington.edu/accesscomputing/AU/before.html');
+    let pageToAudit = await context.newPage();
+    await pageToAudit.goto('https://www.washington.edu/accesscomputing/AU/before.html');
 
     await playAudit({
-        page: page,
+        page: pageToAudit,
         thresholds: {
             performance: 50,
             accessibility: 50,
             'best-practices': 50,
             seo: 50,
-            pwa: 50,
+            pwa: 0,
         },
         port: 9222,
         reports: {
@@ -26,7 +26,7 @@ test('Accessibility test', async ({ page }) => {
               html: true, //defaults to false
               csv: true, //defaults to false
             }
-          },
+        },
     },
     );
 });
