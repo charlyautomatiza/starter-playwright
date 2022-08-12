@@ -2,8 +2,11 @@ import { expect, Locator, Page } from '@playwright/test';
 
 export class PlaywrightDevPage {
   readonly page: Page;
+
   readonly getStartedLink: Locator;
+
   readonly gettingStaterdTitle: Locator;
+
   readonly tocList: Locator;
 
   constructor(page: Page) {
@@ -26,6 +29,6 @@ export class PlaywrightDevPage {
     await this.getStarted();
     await this.page.click('text=Guides');
     await this.gettingStaterdTitle.click();
-    await expect(this.page.locator('h1').locator("text=Core concepts")).toBeVisible();
+    await expect(this.page.locator('h1').locator('text=Core concepts')).toBeVisible();
   }
 }

@@ -8,10 +8,10 @@ test.beforeAll(async ({ playwright }) => {
     // All requests we send go to this API endpoint.
     baseURL: 'https://petstore.swagger.io/',
     extraHTTPHeaders: {
-      'Accept': 'application/json',
+      Accept: 'application/json',
     },
   });
-})
+});
 
 test.afterAll(async () => {
   // Dispose all responses.

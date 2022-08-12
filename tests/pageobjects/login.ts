@@ -1,9 +1,12 @@
 import { Locator, Page } from '@playwright/test';
 
-export class Login {
+export default class Login {
   readonly page: Page;
+
   readonly username: Locator;
+
   readonly password: Locator;
+
   readonly signIn: Locator;
 
   constructor(page: Page) {

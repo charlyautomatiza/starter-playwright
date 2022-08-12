@@ -2,7 +2,9 @@ import { Locator, Page } from '@playwright/test';
 
 export class Tasks {
   readonly page: Page;
+
   readonly search: Locator;
+
   readonly taskTitle: Locator;
 
   constructor(page: Page) {
