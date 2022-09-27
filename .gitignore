@@ -3,3 +3,4 @@ node_modules/
 playwright-report/
 allure*
 .env
+lighthouse/

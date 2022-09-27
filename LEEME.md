@@ -54,6 +54,38 @@ Podrás acceder a mi canal de [YouTube](https://www.youtube.com/c/CharlyAutomati
 
     npm run api-ui
 
+#### **Para la ejecución de UI + API + Mockaroo Examples**
+
+    npm run data-mgmt
+
+**IMPORTANTE**:
+
+Para ejecutar tus propios [Mockaroo](https://www.mockaroo.com/) ejemplos deberás crear una cuenta gratuita, crear el schema que precises y crear un acchivo ".env" en la raíz de tu proyecto con el respectivo **API_KEY** de la cuenta de Mockaroo.
+
+Example .env:
+
+    API_KEY=000zz999
+
+#### **Para la ejecución de ejemplos de Accessibility Testing con [Lighthouse](https://www.npmjs.com/package/playwright-lighthouse)**
+
+    npm run a11y
+
+**IMPORTANTE**:
+
+En la sección `thresholds` del archivo [lighthouse.spec.ts](./tests/lighthouse.spec.ts) se puede configurar el nivel de aceptación de los test de `accessibility`, `performance`, `SEO`, `best-practices`, `pwa` respectivamente.
+
+Si nuestro umbral es de 100 para `accessibility`, nuestro test debe tener una aceptación de 100% para que se considere exitoso.
+
+    ```typescript
+        thresholds: {
+            performance: 50,
+            accessibility: 100,
+            'best-practices': 50,
+            seo: 50,
+            pwa: 0,
+        },
+    ```
+
 #### **Para abrir el reporte Html de Playwright unificado de los resultados de los test**
 
     npm run play-report

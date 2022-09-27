@@ -10,5 +10,5 @@ test('Get Started doc intro', async ({ page }) => {
   const playwrightDev = new PlaywrightDevPage(page);
   await playwrightDev.goto();
   await playwrightDev.getStarted();
-  await expect(playwrightDev.tocList).toContainText('Getting started');
+  await expect(playwrightDev.tocList).toContainText('Installation');
 });
