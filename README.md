@@ -61,6 +61,18 @@ Download and install
 
     npm run api-ui
 
+#### **To run the tests with UI + API + Mockaroo Examples**
+
+    npm run data-mgmt
+
+**IMPORTANT**:
+
+To run your own [Mockaroo](https://www.mockaroo.com/) examples you should create a free account, create a new schema and create a new .env file with your **API_KEY**
+
+Example .env:
+
+    API_KEY=000zz999
+
 #### **For running Accessibility Testing examples with [Lighthouse](https://www.npmjs.com/package/playwright-lighthouse)**
 
     npm run a11y

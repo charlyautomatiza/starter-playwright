@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rimraf allure-results && rimraf allure-report && rimraf test-results && rimraf playwright-report && rimraf junit-results && rimraf lighthouse",
     "api-example": "npx playwright test tests/api.example.spec.ts --project=chromium",
+    "data-mgmt": "npx playwright test tests/dataAPIExample.spec.ts --project=chromium",
     "api-ui": "npm run clean && npx playwright test tests/api.ui.spec.ts --project=chromium",
     "play-report": "npx playwright show-report",
     "allure-report": "allure generate ./allure-results --clean",
@@ -14,7 +15,7 @@
     "chromiun": "npx playwright test --project=chromiun",
     "a11y": "npm run clean && npx playwright test tests/lighthouse.spec.ts --project=chromium",
     "webkit": "npx playwright test --project=webkit",
-    "test": "npm run clean && npx playwright test",
+    "test": "npm run clean && npx playwright test --project=chromium",
     "test-head": "npm run clean && npx playwright test --headed",
     "reinstall": "npx playwright install",
     "install-deps": "npx playwright install-deps"
@@ -46,6 +47,7 @@
   },
   "dependencies": {
     "@faker-js/faker": "^7.4.0",
+    "dotenv": "^16.0.1",
     "rimraf": "^3.0.2"
   }
 }
