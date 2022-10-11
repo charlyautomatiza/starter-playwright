@@ -7,7 +7,7 @@ import * as users from '../data/users.json';
 let apiContext: APIRequestContext;
 const userData = new UserData();
 
-test.beforeAll(async ({ playwright }) => {
+test.beforeEach(async ({ playwright }) => {
   apiContext = await playwright.request.newContext({
     // All requests we send go to this API endpoint.
     baseURL: 'https://task-mgmt-charlyautomatiza.herokuapp.com',
@@ -17,7 +17,7 @@ test.beforeAll(async ({ playwright }) => {
   });
 });
 
-test.afterAll(async () => {
+test.afterEach(async () => {
   // Dispose all responses.
   await apiContext.dispose();
 });
