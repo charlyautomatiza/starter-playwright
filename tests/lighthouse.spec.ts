@@ -3,7 +3,8 @@ import { playAudit } from 'playwright-lighthouse';
 import { test } from '@playwright/test';
 import { chromium } from 'playwright';
 
-test('Accessibility test', async () => {
+test('Accessibility test', async ({ browserName }) => {
+    test.skip(browserName !== 'chromium', 'Still working on it');
     const context = await chromium.launchPersistentContext(os.tmpdir(), {
         args: ['--remote-debugging-port=9222'],
     });

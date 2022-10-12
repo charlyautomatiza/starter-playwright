@@ -7,7 +7,7 @@ import { UserRequest } from './types/userRequest';
 let apiContext: APIRequestContext;
 let dataContext: APIRequestContext;
 
-test.beforeAll(async ({ playwright }) => {
+test.beforeEach(async ({ playwright }) => {
   apiContext = await playwright.request.newContext({
     // All requests we send go to this API endpoint.
     baseURL: 'https://task-mgmt-charlyautomatiza.herokuapp.com',
@@ -25,7 +25,7 @@ test.beforeAll(async ({ playwright }) => {
   });
 });
 
-test.afterAll(async () => {
+test.afterEach(async () => {
   // Dispose all responses.
   await apiContext.dispose();
   await dataContext.dispose();
