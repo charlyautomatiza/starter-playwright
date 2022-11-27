@@ -36,6 +36,7 @@ test.afterEach(async () => {
 */
 test('API SignUp | Login UI', async ({ page }) => {
   const newUserData = await dataContext.get('/users.json');
+  expect(newUserData.status()).toEqual(200);
   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
   // New User
   const { username } = userAPIData[0];
