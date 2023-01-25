@@ -10,7 +10,7 @@ let dataContext: APIRequestContext;
 test.beforeEach(async ({ playwright }) => {
   apiContext = await playwright.request.newContext({
     // All requests we send go to this API endpoint.
-    baseURL: 'https://task-mgmt-charlyautomatiza.herokuapp.com',
+    baseURL: 'https://task-mgmt-charlyautomatiza.onrender.com',
     extraHTTPHeaders: {
       Accept: 'application/json',
     },
@@ -36,6 +36,7 @@ test.afterEach(async () => {
 */
 test('API SignUp | Login UI', async ({ page }) => {
   const newUserData = await dataContext.get('/users.json');
+  expect(newUserData.status()).toEqual(200);
   const userAPIData: UserRequest[] = <UserRequest[]> await newUserData.json();
   // New User
   const { username } = userAPIData[0];
@@ -47,7 +48,7 @@ test('API SignUp | Login UI', async ({ page }) => {
       password,
     },
   });
-  expect(newUser.ok()).toBeTruthy();
+  expect(newUser.status()).toEqual(201);
 
   const login = new Login(page);
   await login.goto();

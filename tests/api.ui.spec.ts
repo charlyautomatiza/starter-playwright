@@ -11,7 +11,7 @@ let apiContext: APIRequestContext;
 test.beforeEach(async ({ playwright }) => {
   apiContext = await playwright.request.newContext({
     // All requests we send go to this API endpoint.
-    baseURL: 'https://task-mgmt-charlyautomatiza.herokuapp.com',
+    baseURL: 'https://task-mgmt-charlyautomatiza.onrender.com',
     extraHTTPHeaders: {
       'Accept': 'application/json',
     },
@@ -37,7 +37,7 @@ test('API SignUp | Login UI', async ({ page }) => {
             password: password,
         }
     });
-    expect(newUser.ok()).toBeTruthy();
+    expect(newUser.status()).toEqual(201);
 
     const login = new Login(page);
     await login.goto();
@@ -60,7 +60,7 @@ test('API: SignUp, Create Task | UI: Login, Find a task', async ({ page }) => {
             password: password,
         }
     });
-    expect(newUser.ok()).toBeTruthy();
+    expect(newUser.status()).toEqual(201);
     // Login
     const loginUser = await apiContext.post('/auth/signin', {
         data: {
@@ -68,13 +68,13 @@ test('API: SignUp, Create Task | UI: Login, Find a task', async ({ page }) => {
             password: password,
         }
     });
-    expect(loginUser.ok()).toBeTruthy();
+    expect(newUser.status()).toEqual(201);
 
     const userData: User = <User> await loginUser.json();
     // Create a new task
     const title = faker.lorem.sentence(2);
     const description = faker.lorem.sentence(5);
-    const newTask = await apiContext.post('/tasks', {
+    await apiContext.post('/tasks', {
         headers:{
             'Authorization': `Bearer ${userData.accessToken}`
         },
@@ -83,7 +83,7 @@ test('API: SignUp, Create Task | UI: Login, Find a task', async ({ page }) => {
             description: description,
         }
     });
-    expect(newTask.ok()).toBeTruthy();
+    expect(newUser.status()).toEqual(201);
     
     // Get the list of tasks
     const getTasks = await apiContext.get('/tasks',{
