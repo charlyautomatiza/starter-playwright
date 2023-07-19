@@ -1,5 +1,6 @@
 {
   "name": "starter-playwright",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -37,17 +38,17 @@
   },
   "homepage": "https://github.com/charlyautomatiza/starter-playwright#readme",
   "devDependencies": {
-    "@playwright/test": "^1.30.2",
-    "allure-commandline": "^2.21.0",
-    "allure-playwright": "^2.1.0",
-    "lighthouse": "9.6.8",
-    "playwright": "^1.32.2",
-    "playwright-lighthouse": "2.2.2",
-    "typescript": "^5.0.4"
+    "@playwright/test": "^1.36.1",
+    "allure-commandline": "^2.23.0",
+    "allure-playwright": "^2.4.0",
+    "lighthouse": "10.4.0",
+    "playwright": "^1.36.1",
+    "playwright-lighthouse": "3.1.0",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@faker-js/faker": "^7.6.0",
-    "dotenv": "^16.0.3",
-    "rimraf": "^4.1.2"
+    "@faker-js/faker": "^8.0.2",
+    "dotenv": "^16.3.1",
+    "rimraf": "^5.0.1"
   }
 }

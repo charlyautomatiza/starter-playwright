@@ -20,7 +20,7 @@ test.beforeEach(async ({ playwright }) => {
     // All requests we send go to this API endpoint.
     baseURL: 'https://my.api.mockaroo.com',
     extraHTTPHeaders: {
-      'X-API-Key': process.env.API_KEY || 'X-API-Key',
+      'X-API-Key': process.env.API_KEY ?? 'X-API-Key',
     },
   });
 });
