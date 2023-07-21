@@ -1,6 +1,6 @@
 import { test, expect, APIRequestContext } from '@playwright/test';
 import { Login } from './pageobjects/login';
-import * as users from '../data/users.json';
+import usersRaw from '../data/users.json' assert { type: 'json' };
 import { UserRequest } from './types/userRequest';
 
 // Request context is reused by all tests in the file.
@@ -61,6 +61,7 @@ test('API SignUp | Login UI', async ({ page }) => {
 */
 test('Login UI - Data From JSON', async ({ page }) => {
   // New User
+  const users: UserRequest[] = usersRaw as UserRequest[];
   const { username } = users[0];
   const { password } = users[0];
 
