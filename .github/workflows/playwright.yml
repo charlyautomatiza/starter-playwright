@@ -18,9 +18,9 @@ jobs:
     - name: Install Playwright
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: API_KEY=${{ secrets.API_KEY }} npx playwright test
-      # env:
-      #   API_KEY: ${{ secrets.API_KEY }}
+      run: npx playwright test
+      env:
+        API_KEY: ${{ secrets.API_KEY }}
     - name: Generate Allure Report
       if: always()
       run: npm run allure-report
