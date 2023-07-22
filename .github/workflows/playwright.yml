@@ -9,8 +9,8 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: '18.x'
     - name: Install dependencies
@@ -18,18 +18,18 @@ jobs:
     - name: Install Playwright
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      env:
-        API_KEY: ${{ secrets.API_KEY }}
-      run: npx playwright test
+      run: API_KEY=${{ secrets.API_KEY }} npx playwright test
+      # env:
+      #   API_KEY: ${{ secrets.API_KEY }}
     - name: Generate Allure Report
       if: always()
       run: npm run allure-report
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       if: always()
       with:
         name: playwright-test-results
         path: test-results/
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       if: always()
       with:
         name: allure-test-results
