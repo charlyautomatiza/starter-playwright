@@ -1,6 +1,6 @@
 import { test, expect, APIRequestContext } from '@playwright/test';
 import { Login } from './pageobjects/login';
-import * as users from '../data/users.json';
+import usersRaw from '../data/users.json' assert { type: 'json' };
 import { UserRequest } from './types/userRequest';
 
 // Request context is reused by all tests in the file.
@@ -20,7 +20,7 @@ test.beforeEach(async ({ playwright }) => {
     // All requests we send go to this API endpoint.
     baseURL: 'https://my.api.mockaroo.com',
     extraHTTPHeaders: {
-      'X-API-Key': process.env.API_KEY || 'X-API-Key',
+      'X-API-Key': process.env.API_KEY ?? 'X-API-Key',
     },
   });
 });
@@ -61,6 +61,7 @@ test('API SignUp | Login UI', async ({ page }) => {
 */
 test('Login UI - Data From JSON', async ({ page }) => {
   // New User
+  const users: UserRequest[] = usersRaw as UserRequest[];
   const { username } = users[0];
   const { password } = users[0];
 

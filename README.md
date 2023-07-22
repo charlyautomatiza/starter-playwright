@@ -83,15 +83,15 @@ In the `thresholds` section of the [lighthouse.spec.ts](./tests/lighthouse.spec.
 
 If our threshold is 100 for `accessibility`, our test must have 100% acceptance to be considered successful.
 
-    ```typescript
-        thresholds: {
-            performance: 50,
-            accessibility: 100,
-            'best-practices': 50,
-            seo: 50,
-            pwa: 0,
-        },
-    ```
+```typescript
+thresholds: {
+    performance: 50,
+    accessibility: 100,
+    'best-practices': 50,
+    seo: 50,
+    pwa: 0,
+},
+```
 
 #### **To open Playwright's unified Html report of test results**
 
