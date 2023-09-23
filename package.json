@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/charlyautomatiza/starter-playwright#readme",
   "devDependencies": {
-    "@playwright/test": "^1.33.1",
+    "@playwright/test": "^1.38.1",
     "allure-commandline": "^2.24.0",
     "allure-playwright": "^2.8.1",
     "lighthouse": "11.1.0",
