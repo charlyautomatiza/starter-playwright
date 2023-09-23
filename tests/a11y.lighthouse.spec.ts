@@ -1,18 +1,17 @@
-import os from 'os';
 import { playAudit } from 'playwright-lighthouse';
 import { test } from '@playwright/test';
-import { chromium } from 'playwright';
+import playwright from 'playwright';
 
 test('Accessibility test', async ({ browserName }) => {
     test.skip(browserName !== 'chromium', 'Still working on it');
-    const context = await chromium.launchPersistentContext(os.tmpdir(), {
+    const browser = await playwright['chromium'].launch({
         args: ['--remote-debugging-port=9222'],
     });
-    let pageToAudit = await context.newPage();
-    await pageToAudit.goto('https://www.washington.edu/accesscomputing/AU/before.html');
+    const page = await browser.newPage();
+    await page.goto('https://www.washington.edu/accesscomputing/AU/before.html');
 
     await playAudit({
-        page: pageToAudit,
+        page: page,
         thresholds: {
             performance: 50,
             accessibility: 50,
@@ -28,6 +27,7 @@ test('Accessibility test', async ({ browserName }) => {
               csv: true, //defaults to false
             }
         },
-    },
-    );
+    });
+
+    await browser.close();
 });
