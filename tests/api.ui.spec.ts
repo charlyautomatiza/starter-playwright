@@ -42,7 +42,7 @@ test('API SignUp | Login UI', async ({ page }) => {
     const login = new Login(page);
     await login.goto();
     await login.sigIn(username, password);
-    await page.waitForURL('**\/tasks');
+    await page.waitForURL('**/tasks');
 });
 
 /**
@@ -100,7 +100,7 @@ test('API: SignUp, Create Task | UI: Login, Find a task', async ({ page }) => {
     const tasks = new Tasks(page);
     await login.goto();
     await login.sigIn(username, password);
-    await page.waitForURL('**\/tasks');
+    await page.waitForURL('**/tasks');
     await tasks.findTask(title);
     await page.waitForLoadState('networkidle');
     const taskUi = await tasks.getTaskTitle();

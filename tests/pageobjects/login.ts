@@ -18,8 +18,8 @@ export class Login {
   }
 
   async sigIn(username:string, password:string) {
-    await this.username.type(username);
-    await this.password.type(password);
+    await this.username.fill(username);
+    await this.password.fill(password);
     await this.signIn.click();
   }
 }
