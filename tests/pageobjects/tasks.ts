@@ -12,7 +12,7 @@ export class Tasks {
   }
 
   async findTask(criteria: string) {
-    await this.search.type(criteria);
+    await this.search.fill(criteria);
     await this.page.waitForLoadState('networkidle');
   }
 
