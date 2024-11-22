@@ -11,7 +11,7 @@ let apiContext: APIRequestContext;
 test.beforeEach(async ({ playwright }) => {
   apiContext = await playwright.request.newContext({
     // All requests we send go to this API endpoint.
-    baseURL: 'https://task-mgmt-charlyautomatiza.onrender.com',
+    baseURL: process.env.BASEURL_UI,
     extraHTTPHeaders: {
       'Accept': 'application/json',
     },
