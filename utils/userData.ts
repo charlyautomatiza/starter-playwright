@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 
 export class UserData {
     public getUsername(): string {
-        return faker.internet.userName() + faker.string.numeric(2);
+        return `${faker.person.firstName()}${faker.string.numeric(2)}`;
     }
 
     public getPassword(): string {

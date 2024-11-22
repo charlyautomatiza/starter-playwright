@@ -27,7 +27,7 @@ test.afterEach(async () => {
  * This test is a simple smoke test.
 */
 test('API SignUp | Login UI', async ({ page }) => {
-    const username = faker.internet.userName() + faker.string.numeric(2);
+    const username = `${faker.person.firstName()}${faker.string.numeric(2)}`;
     const password = faker.internet.password();
 
     // New User
@@ -50,7 +50,7 @@ test('API SignUp | Login UI', async ({ page }) => {
  * Login and find the new task in the list.
  */
 test('API: SignUp, Create Task | UI: Login, Find a task', async ({ page }) => {
-    const username = faker.internet.userName() + faker.string.numeric(2);
+    const username = `${faker.person.firstName()}${faker.string.numeric(2)}`;
     const password = faker.internet.password();
 
     // New User
