@@ -39,15 +39,16 @@
   "homepage": "https://github.com/charlyautomatiza/starter-playwright#readme",
   "devDependencies": {
     "@playwright/test": "^1.49.0",
-    "allure-commandline": "^2.32.0",
-    "allure-playwright": "^3.0.6",
-    "lighthouse": "^12.2.2",
+    "allure-commandline": "^2.32.2",
+    "allure-playwright": "^3.2.0",
+    "lighthouse": "^12.4.0",
     "playwright-lighthouse": "^4.0.0",
-    "typescript": "^5.6.3"
+    "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@faker-js/faker": "^9.2.0",
-    "dotenv": "^16.4.5",
-    "rimraf": "^6.0.1"
+    "@faker-js/faker": "^9.2.1",
+    "dotenv": "^16.4.7",
+    "rimraf": "^6.0.1",
+    "starter-playwright": "file:"
   }
 }
