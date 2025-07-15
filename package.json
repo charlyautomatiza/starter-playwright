@@ -43,6 +43,7 @@
     "allure-playwright": "^3.2.0",
     "lighthouse": "^12.4.0",
     "playwright-lighthouse": "^4.0.0",
+    "pw-api-plugin": "^1.1.0",
     "typescript": "^5.8.2"
   },
   "dependencies": {
