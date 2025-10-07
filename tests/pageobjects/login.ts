@@ -8,6 +8,15 @@ export class Login {
 
   constructor(page: Page) {
     this.page = page;
+    // Best practice: Use data-test-id attributes for stable, maintainable selectors
+    // The framework is configured with testIdAttribute: 'data-test-id' in playwright.config.ts
+    // 
+    // Preferred approach (when the application has data-test-id attributes):
+    // this.username = page.getByTestId('username');
+    // this.password = page.getByTestId('password');
+    // this.signIn = page.getByTestId('sign-in-button');
+    //
+    // Current implementation uses fragile XPath selectors as fallback:
     this.username = page.locator('(//input[@id="outlined-name"])[1]');
     this.password = page.locator('(//input[@id="outlined-name"])[2]');
     this.signIn = page.locator('(//span[normalize-space()="SIGN IN"])[1]');
