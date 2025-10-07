@@ -64,9 +64,30 @@ Podrás acceder a mi canal de [YouTube](https://www.youtube.com/c/CharlyAutomati
 
 Para ejecutar tus propios [Mockaroo](https://www.mockaroo.com/) ejemplos deberás crear una cuenta gratuita, crear el schema que precises y crear un acchivo ".env" en la raíz de tu proyecto con el respectivo **API_KEY** de la cuenta de Mockaroo.
 
-Example .env:
+#### **Configuración de Variables de Entorno**
+
+El proyecto utiliza variables de entorno para configurar URLs para diferentes ambientes. Crea un archivo `.env` en la raíz del proyecto (puedes usar `.env.example` como plantilla):
+
+Ejemplo `.env`:
 
     API_KEY=000zz999
+    BASE_URL=https://charlyautomatiza.github.io/task-management-frontend
+    TASK_MGMT_API_URL=https://task-mgmt-charlyautomatiza.onrender.com
+    PLAYWRIGHT_DEV_URL=https://playwright.dev
+    PETSTORE_API_URL=https://petstore.swagger.io/
+    MOCKAROO_API_URL=https://my.api.mockaroo.com
+    A11Y_TEST_URL=https://www.washington.edu/accesscomputing/AU/before.html
+
+**Variables de Entorno:**
+- `API_KEY`: Tu clave API de Mockaroo para ejemplos de generación de datos
+- `BASE_URL`: URL base para la aplicación frontend de gestión de tareas
+- `TASK_MGMT_API_URL`: URL de la API del backend de gestión de tareas
+- `PLAYWRIGHT_DEV_URL`: URL para las pruebas de documentación de Playwright
+- `PETSTORE_API_URL`: URL para ejemplos de API de Petstore
+- `MOCKAROO_API_URL`: URL base para la API de Mockaroo
+- `A11Y_TEST_URL`: URL para ejemplos de pruebas de accesibilidad
+
+Si las variables de entorno no están configuradas, la aplicación utilizará valores predeterminados.
 
 #### **Para la ejecución de ejemplos de Accessibility Testing con [Lighthouse](https://www.npmjs.com/package/playwright-lighthouse)**
 

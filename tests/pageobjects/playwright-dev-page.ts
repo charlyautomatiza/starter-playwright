@@ -14,7 +14,7 @@ export class PlaywrightDevPage {
   }
 
   async goto() {
-    await this.page.goto('https://playwright.dev');
+    await this.page.goto(process.env.PLAYWRIGHT_DEV_URL || 'https://playwright.dev');
   }
 
   async getStarted() {
