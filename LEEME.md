@@ -24,6 +24,38 @@ Podrás acceder a mi canal de [YouTube](https://www.youtube.com/c/CharlyAutomati
 
 ### Instalación del framework de pruebas
 
+#### **Mejores Prácticas: Usando atributos data-test-id**
+
+Este framework está configurado para preferir atributos `data-test-id` para localizar elementos. Esto proporciona selectores de prueba más estables y mantenibles en comparación con selectores CSS o XPath que pueden romperse cuando cambia la interfaz de usuario.
+
+**Configuración:**
+
+El archivo `playwright.config.ts` está configurado con:
+```typescript
+use: {
+  testIdAttribute: 'data-test-id',
+  // ... otras configuraciones
+}
+```
+
+**Uso en Page Objects:**
+
+Cuando la aplicación tiene atributos `data-test-id`, usa `page.getByTestId()`:
+
+```typescript
+// Enfoque recomendado
+this.username = page.getByTestId('username');
+this.password = page.getByTestId('password');
+this.signIn = page.getByTestId('sign-in-button');
+```
+
+**Beneficios:**
+- Selectores más estables que no se rompen cuando cambian las clases CSS o la estructura del DOM
+- Intención más clara - el ID de prueba marca explícitamente los elementos como objetivos de automatización de pruebas
+- Mejor separación entre las preocupaciones de estilo y pruebas
+
+Para más información, consulta la [documentación de Playwright sobre test IDs](https://playwright.dev/docs/locators#locate-by-test-id).
+
 #### **Clonar el repositorio:**
 
     git clone https://github.com/charlyautomatiza/starter-playwright.git
