@@ -6,7 +6,7 @@ let apiContext: APIRequestContext;
 test.beforeAll(async ({ playwright }) => {
   apiContext = await playwright.request.newContext({
     // All requests we send go to this API endpoint.
-    baseURL: 'https://petstore.swagger.io/',
+    baseURL: process.env.PETSTORE_API_URL || 'https://petstore.swagger.io/',
     extraHTTPHeaders: {
       'Accept': 'application/json',
     },

@@ -5,7 +5,7 @@ let apiContext: APIRequestContext;
 
 setup.beforeEach(async ({ playwright }) => {
   apiContext = await playwright.request.newContext({
-    baseURL: 'https://task-mgmt-charlyautomatiza.onrender.com',
+    baseURL: process.env.TASK_MGMT_API_URL || 'https://task-mgmt-charlyautomatiza.onrender.com',
     extraHTTPHeaders: {
       Accept: 'application/json',
     },

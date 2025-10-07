@@ -10,7 +10,7 @@ let dataContext: APIRequestContext;
 test.beforeEach(async ({ playwright }) => {
   apiContext = await playwright.request.newContext({
     // All requests we send go to this API endpoint.
-    baseURL: 'https://task-mgmt-charlyautomatiza.onrender.com',
+    baseURL: process.env.TASK_MGMT_API_URL || 'https://task-mgmt-charlyautomatiza.onrender.com',
     extraHTTPHeaders: {
       Accept: 'application/json',
     },
@@ -18,7 +18,7 @@ test.beforeEach(async ({ playwright }) => {
 
   dataContext = await playwright.request.newContext({
     // All requests we send go to this API endpoint.
-    baseURL: 'https://my.api.mockaroo.com',
+    baseURL: process.env.MOCKAROO_API_URL || 'https://my.api.mockaroo.com',
     extraHTTPHeaders: {
       'X-API-Key': process.env.API_KEY ?? 'X-API-Key',
     },

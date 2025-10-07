@@ -72,9 +72,30 @@ Download and install
 
 To run your own [Mockaroo](https://www.mockaroo.com/) examples you should create a free account, create a new schema and create a new .env file with your **API_KEY**
 
-Example .env:
+#### **Environment Variables Configuration**
+
+The project uses environment variables to configure URLs for different environments. Create a `.env` file in the root of the project (you can use `.env.example` as a template):
+
+Example `.env`:
 
     API_KEY=000zz999
+    BASE_URL=https://charlyautomatiza.github.io/task-management-frontend
+    TASK_MGMT_API_URL=https://task-mgmt-charlyautomatiza.onrender.com
+    PLAYWRIGHT_DEV_URL=https://playwright.dev
+    PETSTORE_API_URL=https://petstore.swagger.io/
+    MOCKAROO_API_URL=https://my.api.mockaroo.com
+    A11Y_TEST_URL=https://www.washington.edu/accesscomputing/AU/before.html
+
+**Environment Variables:**
+- `API_KEY`: Your Mockaroo API key for data generation examples
+- `BASE_URL`: Base URL for the task management frontend application
+- `TASK_MGMT_API_URL`: API URL for the task management backend
+- `PLAYWRIGHT_DEV_URL`: URL for Playwright documentation tests
+- `PETSTORE_API_URL`: URL for Petstore API examples
+- `MOCKAROO_API_URL`: Base URL for Mockaroo API
+- `A11Y_TEST_URL`: URL for accessibility testing examples
+
+If environment variables are not set, the application will use default values.
 
 #### **For running Accessibility Testing examples with [Lighthouse](https://www.npmjs.com/package/playwright-lighthouse)**
 
