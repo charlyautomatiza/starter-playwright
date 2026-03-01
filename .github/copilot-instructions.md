@@ -17,8 +17,8 @@ These rules guide GitHub Copilot suggestions for this repository. They ensure ge
   # Inspect a trace from a failed run
   npx playwright show-trace test-results/<test-name>/trace.zip
 
-  # Record a new test flow (use the baseURL from playwright.config.ts)
-  npx playwright codegen $BASE_URL
+  # Record a new test flow (replace URL with the baseURL from playwright.config.ts use.baseURL)
+  npx playwright codegen https://charlyautomatiza.github.io/task-management-frontend
   ```
 - When a test is flaky, suggest inspecting the trace before adding retries.
 - Prefer `npx playwright test --last-failed` to quickly re-run only the broken tests.
@@ -27,7 +27,7 @@ These rules guide GitHub Copilot suggestions for this repository. They ensure ge
 
 ## 🔍 Modern Locators (mandatory)
 
-- **Prohibited:** `page.$()`, `page.$$()`, `page.$eval()`, `page.$$eval()`. These are deprecated and must not be used.
+- **Prohibited:** `page.$()`, `page.$$()`, `page.$eval()`, `page.$$eval()`. These are disallowed in this repository; prefer the Locator API for stability and consistency.
 - **Prohibited:** Long XPath chains (e.g., `//div[@class="..."]/h1`). Replace with semantic locators.
 - **Required:** Use the Locator API exclusively. Priority order:
 
@@ -56,20 +56,21 @@ These rules guide GitHub Copilot suggestions for this repository. They ensure ge
 
 ## 🏗️ Test Structure
 
-- **Fixtures pattern:** Do NOT instantiate `new Page()` or call `browser.newPage()` inside tests. Always receive `page` through the test fixture parameter:
+- **Fixtures pattern (UI tests):** For UI tests using `@playwright/test` fixtures, do NOT call `browser.newPage()` inside tests. Always receive `page` through the test fixture parameter:
   ```typescript
-  // ❌ New Page Pattern – avoid
+  // ❌ New Page Pattern – avoid in UI tests
   test('my test', async ({ browser }) => {
     const page = await browser.newPage();
     // ...
   });
 
-  // ✅ Fixture pattern – always use this
+  // ✅ Fixture pattern – always use this in UI tests
   test('my test', async ({ page }) => {
     const login = new Login(page);
     // ...
   });
   ```
+  > **Exception:** `tests/a11y.lighthouse.spec.ts` intentionally launches Chromium manually and calls `browser.newPage()` because the Lighthouse audit requires a remote-debugging port. This pattern is allowed only there and must not be copied into regular UI tests.
 
 - **Page Objects:** Place new page object classes in `tests/pageobjects/`. Follow the existing pattern: typed `Locator` properties set in the constructor, async methods for interactions.
 

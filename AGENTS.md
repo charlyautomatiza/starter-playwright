@@ -17,8 +17,8 @@ This document defines the AI agent roles available in this repository to assist 
   ```
 - Generate test code from browser interactions (use the `baseURL` configured in `playwright.config.ts`):
   ```bash
-  npx playwright codegen $BASE_URL
-  # e.g. npx playwright codegen https://charlyautomatiza.github.io/task-management-frontend
+  npx playwright codegen https://charlyautomatiza.github.io/task-management-frontend
+  # Replace the URL with the use.baseURL value from playwright.config.ts
   ```
 - Inspect trace files after a failed run:
   ```bash
@@ -52,8 +52,9 @@ This document defines the AI agent roles available in this repository to assist 
   1. `getByRole` – reflects ARIA semantics
   2. `getByLabel` – tied to accessible form labels
   3. `getByPlaceholder` – for unlabelled inputs
-  4. `getByText` / `getByTestId` – for content or custom `data-testid` attributes
-  5. `locator('css')` – only when no semantic alternative exists
+  4. `getByText` – for visible user-facing text content
+  5. `getByTestId` – for custom `data-testid` attributes when semantic/text options are not suitable
+  6. `locator('css')` – only when no semantic alternative exists
 
 - Use `codegen` to auto-discover the best locator for any element:
   ```bash
@@ -94,6 +95,18 @@ This document defines the AI agent roles available in this repository to assist 
   ```
 
 **Project context:** CI workflow is at `.github/workflows/playwright.yml`. The project uses `allure-playwright` and a JUnit reporter in addition to the default HTML reporter.
+
+---
+
+## Skills Reference
+
+Reusable, project-agnostic skill definitions live in `.agents/skills/`:
+
+| Skill file | What it covers |
+|---|---|
+| [`playwright-cli-tooling.md`](.agents/skills/playwright-cli-tooling.md) | Running, debugging, recording, and inspecting tests via the Playwright CLI |
+| [`web-first-assertions.md`](.agents/skills/web-first-assertions.md) | Auto-retrying `expect` assertions for DOM, URL, and API state |
+| [`network-interception.md`](.agents/skills/network-interception.md) | Mocking, aborting, and inspecting network requests with `page.route()` |
 
 ---
 

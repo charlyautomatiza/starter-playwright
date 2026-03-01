@@ -130,9 +130,8 @@ Steps through the test line by line so you can inspect locators in real time.
 
 ### Generate tests with Codegen
 
-    npx playwright codegen $BASE_URL
-    # Use the baseURL configured in playwright.config.ts
-    # e.g. https://charlyautomatiza.github.io/task-management-frontend
+    npx playwright codegen https://charlyautomatiza.github.io/task-management-frontend
+    # Replace the URL above with the baseURL configured in your playwright.config.ts (use.baseURL)
 
 Opens a browser with a recorder panel. Every click, fill, and navigation is transcribed into TypeScript code that you can paste directly into a spec file.
 
@@ -172,5 +171,5 @@ This project is structured to work with **MCP (Model Context Protocol)**-enabled
    - *"Refactor `tests/pageobjects/login.ts` to use semantic locators"*
 
 For a full list of available AI agents and their capabilities, see [AGENTS.md](AGENTS.md).  
-For the technical skills inventory, see [SKILLS.md](SKILLS.md).  
+For the reusable skill definitions, see [`.agents/skills/`](.agents/skills/).  
 For Copilot coding rules, see [.github/copilot-instructions.md](.github/copilot-instructions.md).
