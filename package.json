@@ -41,7 +41,7 @@
     "@playwright/test": "^1.55.0",
     "allure-commandline": "^2.34.1",
     "allure-playwright": "^3.4.1",
-    "lighthouse": "^12.8.2",
+    "lighthouse": "^13.4.1",
     "playwright-lighthouse": "^4.0.0",
     "typescript": "^5.9.2"
   },
