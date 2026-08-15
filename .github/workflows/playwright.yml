@@ -8,6 +8,9 @@ on:
     - cron: '0 23 * * 5' # Run at 23:00 UTC on Friday (20:00 GMT-3)
 jobs:
   test:
+    permissions:
+      contents: read
+      checks: write
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
