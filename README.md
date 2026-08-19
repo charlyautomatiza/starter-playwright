@@ -111,3 +111,65 @@ After each upgrade of **Playwright**, the project must be restarted locally with
     npm run reinstall
 
 To download the latest versions of the Browsers.
+
+---
+
+## Playwright CLI Guide
+
+### Open UI Mode (interactive test runner)
+
+    npx playwright test --ui
+
+UI Mode lets you run, filter, and inspect every test with a built-in time-travel debugger and trace viewer.
+
+### Debug a specific test with the Inspector
+
+    npx playwright test tests/ui.example.spec.ts --debug
+
+Steps through the test line by line so you can inspect locators in real time.
+
+### Generate tests with Codegen
+
+    npx playwright codegen https://charlyautomatiza.github.io/task-management-frontend
+    # Replace the URL above with the baseURL configured in your playwright.config.ts (use.baseURL)
+
+Opens a browser with a recorder panel. Every click, fill, and navigation is transcribed into TypeScript code that you can paste directly into a spec file.
+
+### Inspect a trace after a failure
+
+    npx playwright show-trace test-results/<test-name>/trace.zip
+
+The Trace Viewer shows a screenshot timeline, network requests, console logs, and DOM snapshots for every step of the failed test.
+
+### Re-run only failed tests
+
+    npx playwright test --last-failed
+
+### Run tests in a specific shard (useful for CI parallelism)
+
+    npx playwright test --shard=1/4
+
+---
+
+## MCP Integration
+
+This project is structured to work with **MCP (Model Context Protocol)**-enabled editors such as VS Code with a Playwright MCP server. AI agents use the project context to assist in the following ways:
+
+| Agent | How MCP helps |
+|---|---|
+| **CLI Automator** | Executes `codegen` and `show-trace` commands to surface live locators and failure context |
+| **Locator Optimizer** | Reads Page Object files and suggests replacements using `getByRole`, `getByLabel`, and `getByPlaceholder` |
+| **CI/CD Engineer** | Analyses `playwright.config.ts` and the GitHub Actions workflow to suggest sharding and parallelism improvements |
+
+### Setting up MCP locally
+
+1. Install the [Playwright MCP server](https://github.com/microsoft/playwright-mcp) for your editor.
+2. Point the MCP server at this repository root.
+3. Use natural language prompts such as:
+   - *"Generate a locator for the search input on the tasks page"*
+   - *"Debug why `api.ui.spec.ts` is failing on CI"*
+   - *"Refactor `tests/pageobjects/login.ts` to use semantic locators"*
+
+For a full list of available AI agents and their capabilities, see [AGENTS.md](AGENTS.md).  
+For the reusable skill definitions, see [`.agents/skills/`](.agents/skills/).  
+For Copilot coding rules, see [.github/copilot-instructions.md](.github/copilot-instructions.md).
