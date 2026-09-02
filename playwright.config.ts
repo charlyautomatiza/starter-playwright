@@ -50,6 +50,9 @@ const config: PlaywrightTestConfig = {
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+
+    /* Configure custom test ID attribute for more stable selectors. See https://playwright.dev/docs/locators#locate-by-test-id */
+    testIdAttribute: 'data-test-id',
   },
 
   /* Configure projects for major browsers */
