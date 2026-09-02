@@ -14,7 +14,7 @@ export class Login {
   }
 
   async goto() {
-    await this.page.goto('https://charlyautomatiza.github.io/task-management-frontend');
+    await this.page.goto(process.env.BASE_URL || 'https://charlyautomatiza.github.io/task-management-frontend');
   }
 
   async sigIn(username:string, password:string) {

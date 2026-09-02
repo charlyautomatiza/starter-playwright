@@ -8,7 +8,7 @@ test('Accessibility test', async ({ browserName }) => {
         args: ['--remote-debugging-port=9222'],
     });
     const page = await browser.newPage();
-    await page.goto('https://www.washington.edu/accesscomputing/AU/before.html');
+    await page.goto(process.env.A11Y_TEST_URL || 'https://www.washington.edu/accesscomputing/AU/before.html');
 
     await playAudit({
         page: page,
