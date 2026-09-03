@@ -46,7 +46,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@faker-js/faker": "^10.0.0",
+    "@faker-js/faker": "^10.5.0",
     "dotenv": "^17.2.2",
     "rimraf": "^6.0.1",
     "starter-playwright": "file:"
